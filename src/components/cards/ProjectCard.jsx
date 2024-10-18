@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Card = styled.div`
   width: 330px;
-  height: 490px;
+  height: 550px;
   background-color: ${({ theme }) => theme.card};
   cursor: pointer;
   border-radius: 10px;
@@ -22,7 +22,7 @@ const Card = styled.div`
 `;
 const Image = styled.img`
   width: 100%;
-  height: 180px;
+  min-height: 180px;
   background-color: ${({ theme }) => theme.white};
   border-radius: 10px;
   box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.3);
@@ -43,7 +43,8 @@ const Details = styled.div`
   padding: 0px 2px;
 `;
 const Title = styled.div`
-  font-size: 20px;
+  padding: 6px 0 20px;
+  font-size: 21px;
   font-weight: 600;
   color: ${({ theme }) => theme.text_secondary};
   overflow: hidden;
@@ -74,45 +75,68 @@ const Description = styled.div`
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
 `;
-const Members = styled.div`
-  display: flex;
-  align-items: center;
-  padding-left: 10px;
-`;
-const Avatar = styled.img`
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  margin-left: -10px;
-  background-color: ${({ theme }) => theme.white};
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border: 3px solid ${({ theme }) => theme.card};
-`;
 const Button = styled.a`
   color: ${({ theme }) => theme.primary};
   text-decoration: none;
   font-weight: 600;
   text-align: center;
+  border-bottom: 2px solid transparent;
+
+  &:hover {
+    border-bottom: 2px solid ${({ theme }) => theme.primary};
+  }
 `;
+
+const Skill = styled.p`
+  color: ${({ theme }) => theme.text_secondary};
+  padding: 5px;
+  border: 1px solid ${({theme}) => theme.card_outline};
+  border-radius: 5px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+`
+
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-inline: 10px;
+`
+
+const CardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+`
 
 const ProjectCard = ({ project }) => {
   return (
     <Card>
       <Image src={project.image} />
-      <Tags></Tags>
-      <Details>
-        <Title>{project.title}</Title>
-        <Date>{project.date}</Date>
-        <Description>{project.description}</Description>
-      </Details>
-      <Members>
-        {project.member?.map((member) => (
-          <Avatar src={member.img} />
-        ))}
-      </Members>
-      <Button href={project.github} target="_blank">
-        View Code
-      </Button>
+      <Title>{project.title}</Title>
+      <CardContainer>
+        <div>
+          <Tags>
+            {
+              project.tags.map((tag, i) => (
+                <Skill key={i}>{tag}</Skill>
+              ))
+            }
+          </Tags>
+          <Details>
+            <Description>{project.description}</Description>
+          </Details>
+        </div>
+
+        <ButtonContainer>
+          <Button href={project.github} target="_blank">
+            View Code
+          </Button>
+          <Button href={project.webapp} target="_blank">
+            Live App
+          </Button>
+        </ButtonContainer>
+      </CardContainer>
     </Card>
   );
 };

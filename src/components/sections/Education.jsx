@@ -59,8 +59,7 @@ const Education = () => {
             marginBottom: "40px",
           }}
         >
-          My education has been a journey of self-discovery and growth. My
-          educational details are as follows.
+          My education has been a transformative journey, shaping my skills and knowledge. Here are the key milestones of my academic path.
         </Desc>
 
         <VerticalTimeline>

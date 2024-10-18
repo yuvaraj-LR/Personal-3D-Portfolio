@@ -5,7 +5,7 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 import styled from "styled-components";
 
 const HeroContainer = styled.div`
-    width: 350px;
+    width: 320px;
     height: 500px;
     cursor: pointer;
     position: relative;

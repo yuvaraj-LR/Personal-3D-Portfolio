@@ -101,8 +101,7 @@ const Projects = () => {
             marginBottom: "40px",
           }}
         >
-          I have worked on a wide range of projects. From web apps to android
-          apps. Here are some of my projects.
+          Worked on full stack development, building responsive applications, robust authentication systems, and innovative content management solutions across multiple projects and companies. Focused on creating seamless user experiences while ensuring scalability, security, and high performance in every application.
         </Desc>
 
         <ToggleButtonGroup>
@@ -114,24 +113,24 @@ const Projects = () => {
           </ToggleButton>
           <Divider />
           <ToggleButton
-            active={toggle === "web app"}
-            onClick={() => setToggle("web app")}
+            active={toggle === "full-stack"}
+            onClick={() => setToggle("full-stack")}
           >
-            WEB APP"S
+            FULL STACK APP"S
           </ToggleButton>
           <Divider />
           <ToggleButton
-            active={toggle === "android app"}
-            onClick={() => setToggle("android app")}
+            active={toggle === "front-end"}
+            onClick={() => setToggle("front-end")}
           >
-            ANDROID APP'S
+             FRONTEND APP'S
           </ToggleButton>
           <Divider />
           <ToggleButton
-            active={toggle === "machine learning"}
-            onClick={() => setToggle("machine learning")}
+            active={toggle === "back-end"}
+            onClick={() => setToggle("back-end")}
           >
-            MACHINE LEARNING
+            BACKEND APP'S
           </ToggleButton>
         </ToggleButtonGroup>
 

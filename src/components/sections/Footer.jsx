@@ -8,6 +8,8 @@ import {
   Twitter,
 } from "@mui/icons-material";
 
+import GitHubIcon from '@mui/icons-material/GitHub';
+
 const FooterContainer = styled.div`
   width: 100%;
   padding: 2rem 0;
@@ -84,7 +86,7 @@ const Footer = () => {
   return (
     <FooterContainer>
       <FooterWrapper>
-        <Logo>Rishav Chanda</Logo>
+        <Logo>Yuvaraj L R</Logo>
         <Nav>
           <NavLink href="#About">About</NavLink>
           <NavLink href="#Skills">Skills</NavLink>
@@ -93,20 +95,14 @@ const Footer = () => {
           <NavLink href="#Education">Education</NavLink>
         </Nav>
         <SocialMediaIcons>
-          <SocialMediaIcon href={Bio.facebook} target="display">
-            <FacebookRounded />
-          </SocialMediaIcon>
-          <SocialMediaIcon href={Bio.twitter} target="display">
-            <Twitter />
-          </SocialMediaIcon>
           <SocialMediaIcon href={Bio.linkedin} target="display">
             <LinkedIn />
           </SocialMediaIcon>
-          <SocialMediaIcon href={Bio.insta} target="display">
-            <Instagram />
+          <SocialMediaIcon href={Bio.github} target="display">
+            <GitHubIcon />
           </SocialMediaIcon>
         </SocialMediaIcons>
-        <Copyright>&copy; 2024 Rishav Chanda. All rights reserved.</Copyright>
+        <Copyright>&copy; 2024 Yuvaraj_LR. All rights reserved.</Copyright>
       </FooterWrapper>
     </FooterContainer>
   );

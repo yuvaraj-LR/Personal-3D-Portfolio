@@ -143,15 +143,20 @@ const MobileMenu = styled.ul`
   z-index: ${({ isOpen }) => (isOpen ? "1000" : "-1000")};
 `;
 
+const NavButton = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`
+
 const Navbar = (lastTheme) => {
   const [isOpen, setIsOpen] = useState(false);
   const theme = useTheme();
 
-  console.log(lastTheme, "last Theme..");
-
   let currentTheme = lastTheme.lastTheme.id;
   let setCurrentTheme = lastTheme.setCurrentTheme;
-  console.log(currentTheme, "Themee...");
 
   return (
     <Nav>
@@ -187,16 +192,22 @@ const Navbar = (lastTheme) => {
             <NavLink onClick={() => setIsOpen(!isOpen)} href="#Education">
               Education
             </NavLink>
-            <GithubButton
-              href={Bio.github}
-              target="_Blank"
-              style={{
-                background: theme.primary,
-                color: theme.text_primary,
-              }}
-            >
-              Github Profile
-            </GithubButton>
+            <NavButton>
+              <GithubButton
+                href={Bio.github}
+                target="_Blank"
+                style={{
+                  background: theme.primary,
+                  color: theme.text_primary,
+                }}
+              >
+                Github Profile
+              </GithubButton>
+              <ThemeIcon onClick={() => setCurrentTheme(currentTheme === "light" ? darkTheme : lightTheme)}>
+              {currentTheme === "light" ? <Brightness7Icon style={{color: "#000"}} /> : <DarkModeIcon />}
+              </ThemeIcon>
+            </NavButton>
+
           </MobileMenu>
         )}
 

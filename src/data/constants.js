@@ -11,10 +11,7 @@ export const Bio = {
   github: "https://github.com/yuvaraj-LR",
   resume:
     "https://drive.google.com/drive/folders/1VryDGDdhCkMJ249YJbQMdf9s7gH8xdMK",
-  linkedin: "https://www.linkedin.com/in/yuvaraj-lr/",
-  twitter: "https://twitter.com/RishavChanda",
-  insta: "https://www.instagram.com/rishav_chanda/",
-  facebook: "https://www.facebook.com/rishav.chanda.165/",
+  linkedin: "https://www.linkedin.com/in/yuvaraj-lr/"
 };
 
 export const skills = [
@@ -264,7 +261,7 @@ export const projects = [
       "Figma",
       "JWT",
       "Nodemailer",
-      "Google-Login-Integration",
+      "Google-Login",
       "Svelte",
       "Node Js",
       "Express Js",
